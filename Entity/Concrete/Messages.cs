@@ -1,7 +1,10 @@
-﻿namespace Entity.Concrete
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Entity.Concrete
 {
     public class Messages
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string SurName { get; set; }

@@ -8,5 +8,13 @@ namespace Web.UI.Controllers
         {
             return View();
         }
+        public IActionResult Lahiyeler()
+        {
+            return View();
+        }
+        public IActionResult Alaqa()
+        {
+            return View();
+        }
     }
 }

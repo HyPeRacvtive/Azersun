@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entity.Concrete
 {
     public class Product
     {
+        [Key]
         public int Id { get; set; }
         public string ProductName { get; set; }
         public string ProductImage { get; set; }
