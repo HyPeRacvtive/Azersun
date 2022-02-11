@@ -9,41 +9,41 @@ namespace Business.Concrete
 {
     public class ProductManager : IProductService
     {
-        IProductDal _categorydal;
+        IProductDal _productdal;
 
         public ProductManager()
         {
-            _categorydal = new EFProductRepository();
+            _productdal = new EFProductRepository();
         }
 
-        public ProductManager(IProductDal categorydal)
+        public ProductManager(IProductDal productdal)
         {
-            _categorydal = categorydal;
+            _productdal = productdal;
         }
 
         public Product GetById(int id)
         {
-            return _categorydal.GetById(id);
+            return _productdal.GetById(id);
         }
 
         public List<Product> GetListAll()
         {
-            return _categorydal.GetListAll();
+            return _productdal.GetListAll();
         }
 
         public void ProductAdd(Product product)
         {
-            _categorydal.Insert(product);
+            _productdal.Insert(product);
         }
 
         public void ProductDelete(Product product)
         {
-            _categorydal.Delete(product);
+            _productdal.Delete(product);
         }
 
         public void ProductUpdate(Product product)
         {
-            _categorydal.Update(product);
+            _productdal.Update(product);
         }
     }
 }

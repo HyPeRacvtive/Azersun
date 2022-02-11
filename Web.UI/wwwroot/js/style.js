@@ -65,20 +65,20 @@ $(document).ready(function () {
     });
   }
 
-  $(document).on("submit", "form", function (e) {
-    e.preventDefault();
-    $(".btn").attr("disabled", "true");
-    setTimeout(() => {
-      $('.btn').removeAttr("disabled");
-      Swal.fire({
-        icon: 'success',
-        text: 'Formunuz başarıyla gönderildi',
-        showConfirmButton: false,
-        timer: 2000
-      })
-      return false;
-    }, 3000);
-  });
+  //$(document).on("submit", "form", function (e) {
+  //  e.preventDefault();
+  //  $(".btn").attr("disabled", "true");
+  //  setTimeout(() => {
+  //    $('.btn').removeAttr("disabled");
+  //    Swal.fire({
+  //      icon: 'success',
+  //      text: 'Formunuz başarıyla gönderildi',
+  //      showConfirmButton: false,
+  //      timer: 2000
+  //    })
+  //    return false;
+  //  }, 3000);
+  //});
 
 
   $(".lang-downs > .dropdown-menu").hover(function () {

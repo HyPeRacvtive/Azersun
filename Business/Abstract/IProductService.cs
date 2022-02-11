@@ -12,5 +12,6 @@ namespace Business.Abstract
         Product GetById(int id);
 
 
+
     }
 }

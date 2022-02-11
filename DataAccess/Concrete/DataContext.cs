@@ -7,7 +7,7 @@ namespace DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=MEHMETGON;Database=TestAzersunDb ; Integrated Security=true ; User ID=sa ; Password=664189Mg++");
+            optionsBuilder.UseSqlServer("Server=MEHMETGON ; Database=TestAzersunDb ; Integrated Security=true ; User ID=sa ; Password=664189Mg++");
         }
 
         public DbSet<Messages> Messages { get; set; }

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Entity.Concrete.Sliders>
+
+<section class="home-header-section p-0">
+    <div class="home-header-slider owl-carousel owl-theme">
+        @foreach (var Sli in Model)
+        {
+            <div class="item">
+                <img src="~/img/Slider/@Sli.Image" alt="">
+                <div class="slider-text position-absolute top-50 start-50 translate-middle">
+                    <p class="heading">"@Sli.Header"</p>
+                    <p class="texting">
+                        @Sli.Content
+                    </p>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>
