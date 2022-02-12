@@ -3,10 +3,12 @@ using Business.ValidationRules;
 using DataAccess.Concrete.EFCore;
 using Entity.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.UI.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         MessageManager mm = new MessageManager(new EFMessageRepository());
@@ -48,6 +50,6 @@ namespace Web.UI.Controllers
 
         /*Partial Views*/
 
-    
+
     }
 }
