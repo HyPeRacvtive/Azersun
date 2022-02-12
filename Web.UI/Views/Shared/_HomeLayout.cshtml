@@ -88,7 +88,7 @@
         </nav>
     </header>
 
- 
+
 
 
     @RenderBody()
@@ -157,23 +157,7 @@
 
             <div class="footer-alt-main d-flex flex-column flex-md-row justify-content-center align-items-center align-items-lg-end
             justify-content-between">
-                <ul class="d-flex mb-3 mb-md-0">
-                    <li class="me-3">
-                        <a href="#" class="footer-lang d-flex align-items-center justify-content-center">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="me-3">
-                        <a href="#" class="footer-lang d-flex align-items-center justify-content-center">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="footer-lang d-flex align-items-center justify-content-center">
-                            <i class="bi bi-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
+                @await Component.InvokeAsync("SocialMediaList")
                 <p>© Copyright @DateTime.Now.Year Azersun. All right reserved </p>
             </div>
         </div>

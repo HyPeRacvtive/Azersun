@@ -3,39 +3,42 @@ using DataAccess.Abstract;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class SliderManager : ISliderService
+    public class VideosManager : IVideosService
     {
-        ISliderDal _sliderDal;
+        IVideosDal _videodal;
 
-        public SliderManager(ISliderDal sliderDal)
+        public VideosManager(IVideosDal videodal)
         {
-            _sliderDal = sliderDal;
+            _videodal = videodal;
         }
 
-        public Sliders GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Sliders> GetListAll()
-        {
-            return _sliderDal.GetListAll();
-        }
-
-        public void SliderAdd(Sliders slider)
+        public Videos GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void SliderDelete(Sliders slider)
+        public List<Videos> GetListAll()
+        {
+            return _videodal.GetListAll();
+        }
+
+        public void VideoAdd(Videos slider)
         {
             throw new NotImplementedException();
         }
 
-        public void SliderUpdate(Sliders slider)
+        public void VideoDelete(Videos slider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VideoUpdate(Videos slider)
         {
             throw new NotImplementedException();
         }

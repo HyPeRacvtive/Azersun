@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Entity.Concrete.SocialMedia>
+
+
+
+<ul class="d-flex mb-3 mb-md-0">
+    @foreach (var sm in Model)
+    {
+        <li class="me-3">
+            <a href="@sm.Link" class="footer-lang d-flex align-items-center justify-content-center">
+                <i class="@sm.Icon"></i>
+            </a>
+        </li>
+    }
+
+</ul>

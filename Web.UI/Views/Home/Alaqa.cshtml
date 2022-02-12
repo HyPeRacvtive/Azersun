@@ -1,4 +1,5 @@
-﻿
+﻿@model Entity.Concrete.Messages
+
 @{
     ViewData["Title"] = "Alaqa";
 }
@@ -10,46 +11,52 @@
             <p class="alaqa-heading text-center">Əlaqə</p>
             <div class="row alaqa-main g-0">
                 <div class="col-12 col-lg-6 col-xl-7 ">
-                  
+
                     <div class="left">
                         <p>Bizə yaza bilərsiniz</p>
-                        <form class="row form-partner g-1 gx-5" method="post" autocomplete="off">
+                        @using (Html.BeginForm("Alaqa", "Home", FormMethod.Post, new { @class = "row form-partner g-1 gx-5" }))
+                        {
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" name="Name" id="floatingInput" placeholder="Ad">
+                                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Ad" })
+                                    @Html.ValidationMessageFor(x => x.Name,"", new { @class = "text-danger" })
                                     <label for="floatingInput" class="labels">Ad</label>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" name="SurName" id="floatingInput" placeholder="Soyad">
+                                    @Html.TextBoxFor(x => x.SurName, new { @class = "form-control", placeholder = "Soyad" })
+                                    @Html.ValidationMessageFor(x => x.SurName, "", new { @class = "text-danger" })    
                                     <label for="floatingInput" class="labels">Soyad</label>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" name="Phone" id="floatingInput"
-                                           placeholder="Telefon nömrəsi">
+                                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", placeholder = "Telefon nömrəsi", type = "number" })
+                                    @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "text-danger" })                                  
                                     <label for="floatingInput" class="labels">Telefon nömrəsi</label>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
-                                    <input type="email" name="Mail" class="form-control" id="floatingInput"
-                                           placeholder="E-mail">
+                                    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", placeholder = "E-mail", type = "email" })
+                                    @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })
                                     <label for="floatingInput" class="labels">E-mail</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="Subject" class="form-control" id="floatingInput" placeholder="Mövzu">
+                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Mövzu" })
+                                    @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })
                                     <label for="floatingInput" class="labels">Mövzu</label>
+                                  
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control area" name="Message" id="floatingInput"
-                                              placeholder="Mesajınız"></textarea>
+                                    @Html.TextAreaFor(x => x.Message, new { @class = "form-control", placeholder = "Mesajınız" })
+                                    @Html.ValidationMessageFor(x => x.Message, "", new { @class = "text-danger" })
+                             
                                     <label for="floatingInput" class="labels">Mesajınız</label>
                                 </div>
                             </div>
@@ -59,7 +66,7 @@
                                     Göndər
                                 </button>
                             </div>
-                        </form>
+                        }
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-5">

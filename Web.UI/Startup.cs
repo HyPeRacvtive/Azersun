@@ -22,6 +22,9 @@ namespace Web.UI
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error", "?code{0}");
+
             app.UseStaticFiles();
 
             if (env.IsDevelopment())

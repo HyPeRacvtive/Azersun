@@ -29,7 +29,7 @@ namespace Business.Concrete
         public List<Product> GetListAll()
         {
             return _productdal.GetListAll();
-        }
+        }  
 
         public void ProductAdd(Product product)
         {

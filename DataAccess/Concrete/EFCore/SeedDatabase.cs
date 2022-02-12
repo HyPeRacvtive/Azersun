@@ -104,7 +104,9 @@ namespace DataAccess.Concrete.EFCore
              new Settings() {Logo="logo.svg",Phone="(+99412) 404 19 19",Mail="info@azersun.com",Adress="Heydər Əliyev pr., 92a Bakı, Azərbaycan, AZ1029",Map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.95612412804!2d49.89241271563385!3d40.40982276398306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403062b9b75d7abf%3A0x1196186aad77cb20!2sAzersun%20Holding!5e0!3m2!1sen!2str!4v1637259086159!5m2!1sen!2str",ProjectText="SUN markası ənənəvi olaraq hər il bölgə əhalisini şəxsi gigiyena mövzusunda maarifləndirir. Qapıdan - qapıya gəzərək tualet kağızı istifadə edilmədikdə yayılan xəstəliklər və bunun fəsadları barədə həkim nümayəndə vasitəsiylə kənd əhalisini məlumatlandırır. Digər ənənəyə çevrilmiş layihəmiz Məktəbli layihəsidir. Uşaqlıqdan qazanılan bilik daşa həkk olunan yazıdır. - deyirlər. Biz də məhsul qrupu olaraq hədəfimizi böyük tutub, məktəblərdə maarifləndirmə layihəmizi həm əyləncəli, həm də interaktiv şəkildə həyata keçirməyi özümüzə məqsəd qoyduq."}
         };
         private static SocialMedia[] sm = {
-          new SocialMedia(){FaceBook="https://tr-tr.facebook.com/",Instagram="https://www.instagram.com/",Youtube="https://www.youtube.com/"}
+          new SocialMedia(){Name="Facebook",Link="https://tr-tr.facebook.com/",Icon="bi bi-facebook"},
+          new SocialMedia(){Name="Instagram",Link="https://www.instagram.com/",Icon="bi bi-instagram"},
+           new SocialMedia(){Name="Youtube",Link="https://www.youtube.com/",Icon="bi bi-youtube"}
 
         };
         private static Videos[] videos = {

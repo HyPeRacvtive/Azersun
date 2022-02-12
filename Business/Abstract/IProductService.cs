@@ -11,6 +11,7 @@ namespace Business.Abstract
         List<Product> GetListAll();
         Product GetById(int id);
 
+       
 
 
     }

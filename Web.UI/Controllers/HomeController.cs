@@ -1,6 +1,8 @@
 ﻿using Business.Concrete;
+using Business.ValidationRules;
 using DataAccess.Concrete.EFCore;
 using Entity.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.UI.Controllers
@@ -24,10 +26,28 @@ namespace Web.UI.Controllers
         [HttpPost]
         public IActionResult Alaqa(Messages m)
         {
-            m.IpAdress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
-            m.IsRead = false;
-            mm.MessageAdd(m);
-            return RedirectToAction("Alaqa", "Home");
+            MessageValidator mv = new MessageValidator();
+            ValidationResult results = mv.Validate(m);
+            if (results.IsValid)
+            {
+                m.IpAdress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
+                m.IsRead = false;
+                mm.MessageAdd(m);
+                return RedirectToAction("Alaqa", "Home");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
+
+
+        /*Partial Views*/
+
+    
     }
 }
