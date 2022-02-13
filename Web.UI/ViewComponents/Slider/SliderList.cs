@@ -13,7 +13,7 @@ namespace Web.UI.ViewComponents.Slider
         SliderManager sm = new SliderManager(new EFSliderRepository());
         public IViewComponentResult Invoke()
         {
-            var values = sm.GetListAll();
+            var values = sm.GetList();
             return View(values);
         }
     }

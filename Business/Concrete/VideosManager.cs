@@ -18,29 +18,34 @@ namespace Business.Concrete
             _videodal = videodal;
         }
 
-        public Videos GetById(int id)
+        public void Add(Videos t)
         {
-            throw new NotImplementedException();
+            _videodal.Insert(t);
         }
 
-        public List<Videos> GetListAll()
+        public void Delete(Videos t)
+        {
+            _videodal.Delete(t);
+        }
+
+        public Videos GetById(int id)
+        {
+            return _videodal.GetById(id);
+        }
+
+        public List<Videos> GetList()
         {
             return _videodal.GetListAll();
         }
 
-        public void VideoAdd(Videos slider)
+        public List<Videos> GetListById(int id)
         {
-            throw new NotImplementedException();
+            return _videodal.GetListAll(x => x.Id == id);
         }
 
-        public void VideoDelete(Videos slider)
+        public void Update(Videos t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void VideoUpdate(Videos slider)
-        {
-            throw new NotImplementedException();
+            _videodal.Update(t);
         }
     }
 }

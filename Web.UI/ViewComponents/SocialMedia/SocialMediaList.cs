@@ -13,7 +13,7 @@ namespace Web.UI.ViewComponents.SocialMedia
         SocialMediaManager sm = new SocialMediaManager(new EFSocialMediaRepository());
         public IViewComponentResult Invoke()
         {
-            var values = sm.GetListAll();
+            var values = sm.GetList();
             return View(values);
         }
     }

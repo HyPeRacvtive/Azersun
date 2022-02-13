@@ -14,15 +14,34 @@ namespace Business.Concrete
             _setting = setting;
         }
 
-        public List<Settings> GetListAll()
+        public void Add(Settings t)
+        {
+            _setting.Insert(t);
+        }
+
+        public void Delete(Settings t)
+        {
+            _setting.Delete(t);
+        }
+
+        public Settings GetById(int id)
+        {
+            return _setting.GetById(id);
+        }
+
+        public List<Settings> GetList()
         {
             return _setting.GetListAll();
         }
 
-
-        public void SettingUpdate(Settings setting)
+        public List<Settings> GetListById(int id)
         {
-            throw new System.NotImplementedException();
+            return _setting.GetListAll(x => x.Id == id);
+        }
+
+        public void Update(Settings t)
+        {
+            _setting.Update(t);
         }
     }
 }

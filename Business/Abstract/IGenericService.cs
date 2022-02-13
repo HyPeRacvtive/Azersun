@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Business.Abstract
+{
+    public interface IGenericService<T>
+    {
+        void Add(T t);
+        void Delete(T t);
+        void Update(T t);
+        List<T> GetList();
+        List<T> GetListById(int id);
+        T GetById(int id);
+    }
+}

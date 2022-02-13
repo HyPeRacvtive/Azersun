@@ -15,29 +15,34 @@ namespace Business.Concrete
             _sliderDal = sliderDal;
         }
 
-        public Sliders GetById(int id)
+        public void Add(Sliders t)
         {
-            throw new NotImplementedException();
+            _sliderDal.Insert(t);
         }
 
-        public List<Sliders> GetListAll()
+        public void Delete(Sliders t)
+        {
+            _sliderDal.Delete(t);
+        }
+
+        public Sliders GetById(int id)
+        {
+            return _sliderDal.GetById(id);
+        }
+
+        public List<Sliders> GetList()
         {
             return _sliderDal.GetListAll();
         }
 
-        public void SliderAdd(Sliders slider)
+        public List<Sliders> GetListById(int id)
         {
-            throw new NotImplementedException();
+            return _sliderDal.GetListAll(x => x.Id == id);
         }
 
-        public void SliderDelete(Sliders slider)
+        public void Update(Sliders t)
         {
-            throw new NotImplementedException();
-        }
-
-        public void SliderUpdate(Sliders slider)
-        {
-            throw new NotImplementedException();
+            _sliderDal.Update(t);
         }
     }
 }

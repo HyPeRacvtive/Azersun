@@ -121,7 +121,8 @@ namespace DataAccess.Concrete.EFCore
                 new Videos(){Image="layihe-image1.png",Link="https://www.youtube.com/watch?v=CbasHrrBP9M" },
         };
         private static Admin[] admin = {
-                            new Admin(){UserName="admin",Password="admin",Mail="mehmetgon@hotmail.com",NameSurname="Mehmet GÖN",Address="Adana/Seyhan",Phone="05553331122",Image="Admin.jpg"}
+                            new Admin(){UserName="admin",Password="admin",Mail="mehmetgon@hotmail.com",NameSurname="Admin Admin",Address="Adana/Seyhan",Phone="05553331122",Image="Admin.jpg"},
+                            new Admin(){UserName="mehmet",Password="664189++",Mail="mehmetgon@hotmail.com",NameSurname="Mehmet GÖN",Address="Adana/Seyhan",Phone="05327440418",Image="Admin.jpg"}
 
         };
     }

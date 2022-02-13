@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
+using System.Collections.Generic;
 
 namespace Business.Concrete
 {
@@ -13,9 +14,34 @@ namespace Business.Concrete
             _messagesdal = messagesdal;
         }
 
-        public void MessageAdd(Messages message)
+        public void Add(Messages t)
         {
-            _messagesdal.Insert(message);
-                }
+            _messagesdal.Insert(t);
+        }
+
+        public void Delete(Messages t)
+        {
+            _messagesdal.Delete(t);
+        }
+
+        public Messages GetById(int id)
+        {
+            return _messagesdal.GetById(id);
+        }
+
+        public List<Messages> GetList()
+        {
+            return _messagesdal.GetListAll();
+        }
+
+        public List<Messages> GetListById(int id)
+        {
+            return _messagesdal.GetListAll(x => x.Id == id);
+        }
+
+        public void Update(Messages t)
+        {
+            _messagesdal.Update(t);
+        }
     }
 }

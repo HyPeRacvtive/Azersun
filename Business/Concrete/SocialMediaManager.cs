@@ -14,14 +14,34 @@ namespace Business.Concrete
             _socialmedia = socialmedia;
         }
 
-        public List<SocialMedia> GetListAll()
+        public void Add(SocialMedia t)
+        {
+            _socialmedia.Insert(t);
+        }
+
+        public void Delete(SocialMedia t)
+        {
+            _socialmedia.Delete(t);
+        }
+
+        public SocialMedia GetById(int id)
+        {
+            return _socialmedia.GetById(id);
+        }
+
+        public List<SocialMedia> GetList()
         {
             return _socialmedia.GetListAll();
         }
 
-        public void SocialUpdate(SocialMedia social)
+        public List<SocialMedia> GetListById(int id)
         {
-            throw new System.NotImplementedException();
+            return _socialmedia.GetListAll(x => x.Id == id);
+        }
+
+        public void Update(SocialMedia t)
+        {
+            _socialmedia.Update(t);
         }
     }
 }

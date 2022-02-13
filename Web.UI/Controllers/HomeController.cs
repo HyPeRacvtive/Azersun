@@ -34,7 +34,7 @@ namespace Web.UI.Controllers
             {
                 m.IpAdress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
                 m.IsRead = false;
-                mm.MessageAdd(m);
+                mm.Add(m);
                 return RedirectToAction("Alaqa", "Home");
             }
             else
@@ -48,7 +48,7 @@ namespace Web.UI.Controllers
         }
 
 
-        /*Partial Views*/
+     
 
 
     }

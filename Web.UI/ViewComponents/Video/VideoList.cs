@@ -13,7 +13,7 @@ namespace Web.UI.ViewComponents.Video
         VideosManager vm = new VideosManager(new EFVideoRepository());
         public IViewComponentResult Invoke()
         {
-            var values = vm.GetListAll();
+            var values = vm.GetList();
             return View(values);
         }
     }

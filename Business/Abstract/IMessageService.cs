@@ -2,8 +2,8 @@
 
 namespace Business.Abstract
 {
-    public interface IMessageService
+    public interface IMessageService : IGenericService<Messages>
     {
-        void MessageAdd(Messages message);
+        
     }
 }

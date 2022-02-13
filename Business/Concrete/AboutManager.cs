@@ -14,14 +14,34 @@ namespace Business.Concrete
             _about = about;
         }
 
-        public void AboutUpdate(About about)
+        public void Add(About t)
         {
-            throw new System.NotImplementedException();
+            _about.Insert(t);
         }
 
-        public List<About> GetListAll()
+        public void Delete(About t)
+        {
+            _about.Delete(t);
+        }
+
+        public About GetById(int id)
+        {
+            return _about.GetById(id);
+        }
+
+        public List<About> GetList()
         {
             return _about.GetListAll();
+        }
+
+        public List<About> GetListById(int id)
+        {
+            return _about.GetListAll(x => x.Id == id);
+        }
+
+        public void Update(About t)
+        {
+            _about.Update(t);
         }
     }
 }

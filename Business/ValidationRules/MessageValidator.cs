@@ -21,15 +21,6 @@ namespace Business.ValidationRules
             RuleFor(x => x.Subject).MaximumLength(20).WithMessage("Lütfen Konuyu Doğru Biçimde Giriniz(En Fazla 20 Karakter)");
             RuleFor(x => x.Message).MinimumLength(20).WithMessage("Lütfen Mesajınızı Doğru Biçimde Giriniz (En Az 20 Karakter)");
 
-
-
-
-
-
-
-
-
-
         }
     }
 }

@@ -4,6 +4,7 @@ using DataAccess.Concrete.EFCore;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Business.Concrete
 {
@@ -26,24 +27,33 @@ namespace Business.Concrete
             return _productdal.GetById(id);
         }
 
-        public List<Product> GetListAll()
+        public List<Product> GetList()
         {
-            return _productdal.GetListAll();
-        }  
-
-        public void ProductAdd(Product product)
+            return _productdal.GetListAll().OrderByDescending(x => x.Id).ToList();
+        }
+        public List<Product> ProductOrderByDescending(int a)
         {
-            _productdal.Insert(product);
+            return _productdal.GetListAll().OrderByDescending(x => x.Id).Take(a).ToList();
         }
 
-        public void ProductDelete(Product product)
+        public void Add(Product t)
         {
-            _productdal.Delete(product);
+            _productdal.Insert(t);
         }
 
-        public void ProductUpdate(Product product)
+        public void Delete(Product t)
         {
-            _productdal.Update(product);
+            _productdal.Delete(t);
+        }
+
+        public void Update(Product t)
+        {
+            _productdal.Update(t);
+        }
+
+        public List<Product> GetListById(int id)
+        {
+            return _productdal.GetListAll(x => x.Id == id);
         }
     }
 }

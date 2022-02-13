@@ -13,7 +13,7 @@ namespace Web.UI.ViewComponents.About
         AboutManager pm = new AboutManager(new EFAboutRepository());
         public IViewComponentResult Invoke()
         {
-            var values = pm.GetListAll();
+            var values = pm.GetList();
             return View(values);
         }
     }

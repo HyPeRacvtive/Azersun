@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace Business.Abstract
 {
-    public interface IAboutService
+    public interface IAboutService : IGenericService<About>
     {
-        void AboutUpdate(About about);
-        List<About> GetListAll();
+    
     }
 }

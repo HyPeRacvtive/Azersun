@@ -3,12 +3,8 @@ using System.Collections.Generic;
 
 namespace Business.Abstract
 {
-    public interface ISliderService
+    public interface ISliderService : IGenericService<Sliders>
     {
-        void SliderAdd(Sliders slider);
-        void SliderDelete(Sliders slider);
-        void SliderUpdate(Sliders slider);
-        List<Sliders> GetListAll();
-        Sliders GetById(int id);
+     
     }
 }
