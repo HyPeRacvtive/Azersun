@@ -6,19 +6,19 @@ namespace DataAccess.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "Score",
-                table: "Products",
-                type: "int",
+            migrationBuilder.AddColumn<bool>(
+                name: "Statu",
+                table: "Sliders",
+                type: "bit",
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: false);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Score",
-                table: "Products");
+                name: "Statu",
+                table: "Sliders");
         }
     }
 }

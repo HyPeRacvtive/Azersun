@@ -40,7 +40,7 @@ namespace Business.Concrete
 
         public List<Videos> GetListById(int id)
         {
-            return _videodal.GetListAll(x => x.Id == id);
+            return _videodal.GetListAllById(x => x.Id == id);
         }
 
         public void Update(Videos t)

@@ -31,10 +31,6 @@ namespace Business.Concrete
         {
             return _productdal.GetListAll().OrderByDescending(x => x.Id).ToList();
         }
-        public List<Product> ProductOrderByDescending(int a)
-        {
-            return _productdal.GetListAll().OrderByDescending(x => x.Id).Take(a).ToList();
-        }
 
         public void Add(Product t)
         {
@@ -53,7 +49,7 @@ namespace Business.Concrete
 
         public List<Product> GetListById(int id)
         {
-            return _productdal.GetListAll(x => x.Id == id);
+            return _productdal.GetListAllById(x => x.Id == id);
         }
     }
 }

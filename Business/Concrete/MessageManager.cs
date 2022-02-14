@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public List<Messages> GetListById(int id)
         {
-            return _messagesdal.GetListAll(x => x.Id == id);
+            return _messagesdal.GetListAllById(x => x.Id == id);
         }
 
         public void Update(Messages t)

@@ -1,4 +1,4 @@
-﻿@model Entity.Concrete.Product
+﻿@model Web.UI.Models.AddProductImage
 
 @{
     ViewData["Title"] = "Create";
@@ -35,26 +35,26 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Ürün Adı</label>
-                                    @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control"  })
-                                    @Html.ValidationMessageFor(model => model.ProductName,"", new { @class = "text-danger"  })
+                                    @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Genişlik</label>
-                                    @Html.TextBoxFor(model => model.Width, new { @class = "form-control" ,@type="Number"  })
+                                    @Html.TextBoxFor(model => model.Width, new { @class = "form-control", @type = "Number" })
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Yükseklik</label>
-                                    @Html.TextBoxFor(model => model.Height, new { @class = "form-control",@type="Number"   })
+                                    @Html.TextBoxFor(model => model.Height, new { @class = "form-control", @type = "Number" })
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Stok</label>
-                                    @Html.TextBoxFor(model => model.Stock, new { @class = "form-control", @type="Number"  })
-                                    @Html.ValidationMessageFor(model => model.Stock,"", new { @class = "text-danger"  })
+                                    @Html.TextBoxFor(model => model.Stock, new { @class = "form-control", @type = "Number" })
+                                    @Html.ValidationMessageFor(model => model.Stock, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Resim Ekle</label>
                                     <input type="file" required class="form-control" name="ProductImage" value="" />
-                                    @Html.ValidationMessageFor(model => model.ProductImage,"", new { @class = "text-danger"  })
+                                    @Html.ValidationMessageFor(model => model.ProductImage, "", new { @class = "text-danger" })
 
                                 </div>
                                 <div class="form-group">

@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public List<Admin> GetListById(int id)
         {
-            return _admindal.GetListAll(x => x.Id == id);
+            return _admindal.GetListAllById(x => x.Id == id);
         }
 
         public void Update(Admin t)

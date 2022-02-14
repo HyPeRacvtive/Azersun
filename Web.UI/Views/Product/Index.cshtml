@@ -1,12 +1,12 @@
-﻿@using Entity.Concrete
-@model List<Product>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<Product>
 
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
@@ -22,17 +22,13 @@
         </div>
     </div>
 </div>
-
-
 <div class="row">
-
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table product-overview" id="myTable">
                         <thead>
-
                             <tr>
                                 <th>Ürün Adı</th>
                                 <th>Resim</th>
@@ -42,43 +38,49 @@
                                 <th>Eklenme Tarihi</th>
                                 <th>Durum</th>
                                 <th>İşlemler</th>
-
-
                             </tr>
-
                         </thead>
                         <tbody>
-                             @foreach (var pro in Model)
-                                {
-                            <tr>
-                                <td>@pro.ProductName</td>
-                                <td> <img src="~/img/Product/@pro.ProductImage" alt="Ürün Resim" width="80"> </td>
-                                <td>@pro.Width</td>
-                                <td>@pro.Height</td>
-                                <td>@pro.Stock</td>
-                                <td>@pro.CreateDate</td>
-                                @if (pro.Statu)
+                            @foreach (var pro in Model)
+                            {
+                                <tr>
+                                    <td>@pro.ProductName</td>
+                                    <td> <img src="~/img/Product/@pro.ProductImage" alt="Ürün Resim" width="80"> </td>
+                                    <td>@pro.Width</td>
+                                    <td>@pro.Height</td>
+                                    <td>@pro.Stock</td>
+                                    <td>@pro.CreateDate</td>
+                                    @if (pro.Statu)
                                     {
-                                <td> <span class="label label-success font-weight-100">Aktif</span> </td>
-                                  }
+                                        <td> <span class="label label-success font-weight-100">Aktif</span> </td>
+                                    }
                                     else
                                     {
-                                    <td> <span class="label label-danger font-weight-100">Pasif</span> </td>
+                                        <td> <span class="label label-danger font-weight-100">Pasif</span> </td>
                                     }
-
-
-                                <td>
-                                    <a href="/Product/Edit/@pro.Id" class="text-inverse p-r-10" data-toggle="tooltip" title="Düzenle"><i class="ti-marker-alt text-success"></i></a>
-                                    <a href="/Product/Delete/@pro.Id" class="text-inverse" title="Sil" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
-                                </td>
-                            </tr>
-
+                                    <td>
+                                        <a href="/Product/Edit/@pro.Id" class="text-inverse p-r-10" data-toggle="tooltip" title="Düzenle"><i class="ti-marker-alt text-success"></i></a>
+                                        <a href="/Product/Delete/@pro.Id" class="text-inverse" title="Sil" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new X.PagedList.Web.Common.PagedListRenderOptions
+                    {
+                        DisplayLinkToIndividualPages = true,
+                        DisplayPageCountAndCurrentLocation = false,
+                        MaximumPageNumbersToDisplay = 3,
+                        LiElementClasses = new string[] { "page-item" },
+                        PageClasses = new string[] { "page-link" },
+
+                      })
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+
+
+
+

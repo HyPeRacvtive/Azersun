@@ -37,7 +37,7 @@ namespace Business.Concrete
 
         public List<Sliders> GetListById(int id)
         {
-            return _sliderDal.GetListAll(x => x.Id == id);
+            return _sliderDal.GetListAllById(x => x.Id == id);
         }
 
         public void Update(Sliders t)

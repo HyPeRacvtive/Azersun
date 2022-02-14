@@ -13,7 +13,7 @@ namespace Web.UI.ViewComponents.Product
         ProductManager pm = new ProductManager(new EFProductRepository());
         public IViewComponentResult Invoke()
         {
-            var values = pm.ProductOrderByDescending(6).Where(x => x.Statu == true);
+            var values = pm.GetList().OrderByDescending(x => x.Id).Take(6);
             return View(values);
         }
     }

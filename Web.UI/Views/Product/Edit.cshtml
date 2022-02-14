@@ -1,4 +1,4 @@
-﻿@model Entity.Concrete.Product
+﻿@model Product
 
 @{
     ViewData["Title"] = "Edit";
@@ -44,7 +44,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon22"><i class="fas fa-image form-control"></i></span>
                             </div>
-                            <input type="text" name="ProductImage" class="form-control" required value="@Model.ProductImage" />
+                            <input type="file" required class="form-control" id="resim" name="ProductImage" value="" />
+                          
                         </div>
                     </div>
 

@@ -1,4 +1,4 @@
-﻿@model Entity.Concrete.Messages
+﻿@model Messages
 
 @{
     ViewData["Title"] = "Alaqa";
@@ -18,15 +18,15 @@
                         {
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
-                                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Ad" })
-                                    @Html.ValidationMessageFor(x => x.Name,"", new { @class = "text-danger" })
+                                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", placeholder = "Ad" })
+                                    @Html.ValidationMessageFor(x => x.FirstName,"", new { @class = "text-danger" })
                                     <label for="floatingInput" class="labels">Ad</label>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
-                                    @Html.TextBoxFor(x => x.SurName, new { @class = "form-control", placeholder = "Soyad" })
-                                    @Html.ValidationMessageFor(x => x.SurName, "", new { @class = "text-danger" })    
+                                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", placeholder = "Soyad" })
+                                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })    
                                     <label for="floatingInput" class="labels">Soyad</label>
                                 </div>
                             </div>

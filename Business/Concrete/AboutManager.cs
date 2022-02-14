@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public List<About> GetListById(int id)
         {
-            return _about.GetListAll(x => x.Id == id);
+            return _about.GetListAllById(x => x.Id == id);
         }
 
         public void Update(About t)

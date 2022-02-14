@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public List<SocialMedia> GetListById(int id)
         {
-            return _socialmedia.GetListAll(x => x.Id == id);
+            return _socialmedia.GetListAllById(x => x.Id == id);
         }
 
         public void Update(SocialMedia t)
