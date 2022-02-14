@@ -14,7 +14,7 @@
             </ol>
             <button type="button" onclick="window.location.href='/Product/Create'" class="btn btn-info d-none d-lg-block m-l-15 text-white"><i class="fa fa-shopping-bag text-warning"></i> Ürün ekle</button>
             <button type="button" onclick="window.location.href='/Video/Create'" class="btn btn-info d-none d-lg-block m-l-15 text-white"><i class="fa fa-video text-danger"></i> Video Ekle </button>
-            <button type="button"  onclick="window.location.href='/Slider/Create'" class="btn btn-info d-none d-lg-block m-l-15 text-white"><i class="fa fa-images text-secondary"></i> Slider Ekle</button>
+            <button type="button" onclick="window.location.href='/Slider/Create'" class="btn btn-info d-none d-lg-block m-l-15 text-white"><i class="fa fa-images text-secondary"></i> Slider Ekle</button>
         </div>
     </div>
 </div>
@@ -124,4 +124,6 @@
         </div>
     </div>
 </div>
-
+<div class="row">
+    @await Component.InvokeAsync("Weather")
+</div>

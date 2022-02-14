@@ -1,8 +1,11 @@
-﻿<div class="user-profile">
+﻿
+
+
+<div class="user-profile">
     <div class="user-pro-body">
-        <div><img src="~/AdminStyle/img/AdminProfile/Admin.jpg" alt="user-img" class="img-circle"></div>
+        <div><img src="~/AdminStyle/img/AdminProfile/@ViewBag.AdminImage" alt="user-img" class="img-circle"></div>
         <div class="dropdown">
-            <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin'in Kralı<span class="caret"></span></a>
+            <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.AdminName<span class="caret"></span></a>
             <div class="dropdown-menu animated flipInY">
                 <a href="/Admin/Profile/" class="dropdown-item"><i class="ti-user"></i> Profilim</a>
                 <a href="javascript:void(0)" class="dropdown-item"><i class="ti-email"></i> Mesajlar</a>

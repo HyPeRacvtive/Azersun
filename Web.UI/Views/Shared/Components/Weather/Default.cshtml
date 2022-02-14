@@ -1,0 +1,18 @@
+﻿<div class="col-md-5">
+    <div class="card bg-cyan text-white">
+        <div class="card-body ">
+            <div class="row weather">
+                <div class="col-6 m-t-40">
+                    <h3>Hava Durumu</h3>
+                    <div class="display-4">@ViewBag.Temperature<sup>°C</sup></div>
+                    <p class="text-white">@ViewBag.City</p>
+                </div>
+                <div class="col-6 text-end">
+                    <h1 class="m-b-"><i class="wi wi-owm-@ViewBag.icon"></i></h1>
+                    <b class="text-white">@ViewBag.Cloud</b>
+                    <p class="op-5">@DateTime.Now.ToString("MMMM dd")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
