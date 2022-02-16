@@ -3,17 +3,16 @@
 
 @if (Context.Request.Path == "/Home/Alaqa")
 {
-    @foreach (var item in Model)
-    {
-        <ul class="social-list d-flex align-items-center">
+    <ul class="social-list d-flex align-items-center">
+        @foreach (var item in Model)
+        {
             <li>
                 <a href="@item.Link" class="social-item d-flex align-items-center justify-content-center">
                     <i class="@item.Icon"></i>
                 </a>
             </li>
-        </ul>
-    }
-
+        }
+    </ul>
 }
 else
 {
