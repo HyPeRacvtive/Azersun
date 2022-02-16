@@ -1,33 +1,78 @@
 ﻿@model IEnumerable<SocialMedia>
 
-
 @if (Context.Request.Path == "/Home/Alaqa")
 {
     <ul class="social-list d-flex align-items-center">
         @foreach (var item in Model)
         {
-            <li>
-                <a href="@item.Link" class="social-item d-flex align-items-center justify-content-center">
-                    <i class="@item.Icon"></i>
-                </a>
-            </li>
+            @if (item.FaceBook != null)
+            {
+                <li>
+                    <a href="@item.FaceBook" class="social-item d-flex align-items-center justify-content-center">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                </li>
+            }
+            @if (item.Youtube != null)
+            {
+                <li>
+                    <a href="@item.Youtube" class="social-item d-flex align-items-center justify-content-center">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </li>
+            }
+
+            @if (item.Instagram != null)
+            {
+                <li>
+                    <a href="@item.Instagram" class="social-item d-flex align-items-center justify-content-center">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </li>
+            }
         }
     </ul>
 }
 else
 {
     <ul class="d-flex mb-3 mb-md-0">
-        @foreach (var sm in Model)
+        @foreach (var item in Model)
         {
-            <li class="me-3">
-                <a href="@sm.Link" class="footer-lang d-flex align-items-center justify-content-center">
-                    <i class="@sm.Icon"></i>
-                </a>
-            </li>
+            @if (item.FaceBook != null)
+            {
+                <li class="me-3">
+                    <a href="@item.FaceBook" class="footer-lang d-flex align-items-center justify-content-center">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                </li>
+            }
+
+            @if (item.Youtube != null)
+            {
+                <li class="me-3">
+                    <a href="@item.Youtube" class="footer-lang d-flex align-items-center justify-content-center">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </li>
+            }
+
+            @if (item.Instagram != null)
+            {
+                <li class="me-3">
+                    <a href="@item.Instagram" class="footer-lang d-flex align-items-center justify-content-center">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </li>
+            }
         }
+
 
     </ul>
 }
+
+
+
+
 
 
 

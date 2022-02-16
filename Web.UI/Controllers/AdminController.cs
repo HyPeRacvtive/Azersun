@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Concrete.EFCore;
+using Entity.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,6 +17,7 @@ namespace Web.UI.Controllers
         AdminManager am = new AdminManager(new EFAdminRepository());
         SettingManager sm = new SettingManager(new EFSettingRepository());
         AboutManager abm = new AboutManager(new EFAboutRepository());
+        SocialMediaManager smm = new SocialMediaManager(new EFSocialMediaRepository());
         DataContext context = new DataContext();
         public IActionResult Index()
         {
@@ -57,9 +59,23 @@ namespace Web.UI.Controllers
         {
             return View();
         }
+        public IActionResult Social(int id)
+        {
+            var values = smm.GetById(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public IActionResult Social(SocialMedia social)
+        {
+            smm.Update(social);
+            return RedirectToAction("Index");
+
+        }
+
         public IActionResult Setting(int id)
         {
-            var values = sm.GetById(id);
+             var values = sm.GetById(id);
             return View(values);
         }
         [HttpPost]
