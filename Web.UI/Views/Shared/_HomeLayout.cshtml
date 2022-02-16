@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="navbar-main w-100 d-flex align-items-center justify-content-between position-relative">
                     <a class="navbar-brand d-block p-0 m-0" href="/">
-                        <img src="~/img/Logo/logo.svg" alt="navbarlogo">
+                        <img src="~/img/Logo/@await Component.InvokeAsync("Logo")" alt="navbarlogo">
                     </a>
                     <div class="navbar-collapse flex-grow-0">
                         <ul class="navbar-nav w-100 h-100  align-items-center justify-content-center">
@@ -101,7 +101,7 @@
             <div class="row mx-auto footer-top g-0">
                 <div class="col-12 mx-auto  mx-lg-0 col-lg-2">
                     <div class="footer-logo d-block text-center text-lg-start">
-                        <img class="svg" src="~/img/Logo/logo.svg" alt="">
+                        <img class="svg" src="~/img/Logo/@await Component.InvokeAsync("Logo")" alt="">
                     </div>
                 </div>
                 <div class="row col-12 offset-lg-2 offset-xl-3  col-lg-8 col-xl-7 g-0">
@@ -157,7 +157,11 @@
 
             <div class="footer-alt-main d-flex flex-column flex-md-row justify-content-center align-items-center align-items-lg-end
             justify-content-between">
-                @await Component.InvokeAsync("SocialMediaList")
+
+                <ul class="d-flex mb-3 mb-md-0">
+                    @await Component.InvokeAsync("SocialMediaList")
+                </ul>
+
                 <p>© Copyright @DateTime.Now.Year Azersun. All right reserved </p>
             </div>
         </div>

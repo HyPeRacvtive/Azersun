@@ -5,22 +5,9 @@
 
 <section>
     <div class="container">
-        <div class="row align-items-center leyihalar-heading-main g-3 g-xl-0">
-            <div class="col-12 col-lg-2">
-                <p class="lahiyeler-heading">Layihələr</p>
-            </div>
-            <div class="col-12 col-lg-10">
-                <p class="layihaler-text">
-                    "SUN" markası ənənəvi olaraq hər il bölgə əhalisini şəxsi gigiyena mövzusunda maarifləndirir.
-                    Qapıdan - qapıya gəzərək tualet kağızı istifadə edilmədikdə yayılan xəstəliklər və bunun
-                    fəsadları barədə həkim nümayəndə vasitəsiylə kənd əhalisini məlumatlandırır. Digər ənənəyə
-                    çevrilmiş layihəmiz "Məktəbli" layihəsidir. "Uşaqlıqdan qazanılan bilik daşa həkk olunan
-                    yazıdır." - deyirlər. Biz də məhsul qrupu olaraq hədəfimizi böyük tutub, məktəblərdə
-                    maarifləndirmə layihəmizi həm əyləncəli, həm də interaktiv şəkildə həyata keçirməyi özümüzə
-                    məqsəd qoyduq.
-                </p>
-            </div>
-        </div>
+       
+        @await Component.InvokeAsync("Lahiye")
+
         @await Component.InvokeAsync("VideoList")
 
     </div>

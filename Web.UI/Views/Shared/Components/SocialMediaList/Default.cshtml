@@ -1,15 +1,40 @@
 ﻿@model IEnumerable<SocialMedia>
 
 
-
-<ul class="d-flex mb-3 mb-md-0">
-    @foreach (var sm in Model)
+@if (Context.Request.Path == "/Home/Alaqa")
+{
+    @foreach (var item in Model)
     {
-        <li class="me-3">
-            <a href="@sm.Link" class="footer-lang d-flex align-items-center justify-content-center">
-                <i class="@sm.Icon"></i>
-            </a>
-        </li>
+        <ul class="social-list d-flex align-items-center">
+            <li>
+                <a href="@item.Link" class="social-item d-flex align-items-center justify-content-center">
+                    <i class="@item.Icon"></i>
+                </a>
+            </li>
+        </ul>
     }
 
-</ul>
+}
+else
+{
+    <ul class="d-flex mb-3 mb-md-0">
+        @foreach (var sm in Model)
+        {
+            <li class="me-3">
+                <a href="@sm.Link" class="footer-lang d-flex align-items-center justify-content-center">
+                    <i class="@sm.Icon"></i>
+                </a>
+            </li>
+        }
+
+    </ul>
+}
+
+
+
+
+
+
+
+
+

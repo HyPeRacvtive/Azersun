@@ -6,14 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web.UI.ViewComponents.Product
+namespace Web.UI.ViewComponents.Home
 {
-    public class ProductList : ViewComponent
+    public class Logo:ViewComponent
     {
-        ProductManager pm = new ProductManager(new EFProductRepository());
+        SettingManager sm = new SettingManager(new EFSettingRepository());
         public IViewComponentResult Invoke()
         {
-            var values = pm.GetList().OrderByDescending(x => x.Id).Take(6);
+            var values = sm.GetList();
             return View(values);
         }
     }
