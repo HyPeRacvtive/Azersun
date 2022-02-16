@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Web.UI.Models
 {
-    public class AddVideoImage
+    public class UpdateAbout
     {
         public int Id { get; set; }
+        public string Text { get; set; }
         public IFormFile Image { get; set; }
-        public string Link { get; set; }
     }
 }

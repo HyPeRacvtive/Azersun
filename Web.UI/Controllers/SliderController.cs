@@ -47,7 +47,7 @@ namespace Web.UI.Controllers
         [HttpPost]
         public IActionResult Edit(AddSliderImage pImg)
         {
-            Sliders s = new Sliders();
+            var getSlider = sm.GetById(pImg.Id);
             if (pImg.Image != null)
             {
                 var extension = Path.GetExtension(pImg.Image.FileName);
@@ -55,12 +55,12 @@ namespace Web.UI.Controllers
                 var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Slider/", newImageName);
                 var stream = new FileStream(location, FileMode.Create);
                 pImg.Image.CopyTo(stream);
-                s.Image = newImageName;
+                getSlider.Image = newImageName;
             }
-            s.Header = pImg.Header;
-            s.Statu = pImg.Statu;
-            s.Content = pImg.Content;
-            sm.Update(s);
+            getSlider.Header = pImg.Header;
+            getSlider.Statu = pImg.Statu;
+            getSlider.Content = pImg.Content;
+            sm.Update(getSlider);
             return RedirectToAction("Index");
         }
         public IActionResult SliderStatuChange(int id)

@@ -21,7 +21,7 @@
 </div>
 
 
-@using (Html.BeginForm("AdminProfile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Profile", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -102,16 +102,12 @@
                             </div>
                             <input type="text" class="form-control" name="Mail" value="@Model.Mail" placeholder="Mail Adresi" aria-label="Email" aria-describedby="basic-addon22">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Admin Hakkında</label>
-                       
-                    </div>
+                    </div>                   
                 </div>
             </div>
         </div>
         <div class="w-100">
-            <hr class=" danger" />
+            <hr class="danger" />
             <button type="submit" class="btn btn-success mr-2">Kaydet</button>
             <a class="btn btn-danger" href="/Admin">İptal</a>
         </div>

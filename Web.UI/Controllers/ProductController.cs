@@ -54,8 +54,7 @@ namespace Web.UI.Controllers
         [HttpPost]
         public IActionResult Edit(AddProductImage pImg)
         {
-           
-            Product p = new Product();
+            var getProduct = pm.GetById(pImg.Id);
             if (pImg.ProductImage != null)
             {
                 var extension = Path.GetExtension(pImg.ProductImage.FileName);
@@ -63,15 +62,15 @@ namespace Web.UI.Controllers
                 var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Product/", newImageName);
                 var stream = new FileStream(location, FileMode.Create);
                 pImg.ProductImage.CopyTo(stream);
-                p.ProductImage = newImageName;
+                getProduct.ProductImage = newImageName;
             }
-            p.ProductName = pImg.ProductName;
-            p.Stock = pImg.Stock;
-            p.Width = pImg.Width;
-            p.Height = pImg.Height;
-            p.Stock = pImg.Stock;
-            p.Statu = pImg.Statu;
-            pm.Update(p);
+            getProduct.ProductName = pImg.ProductName;
+            getProduct.Stock = pImg.Stock;
+            getProduct.Width = pImg.Width;
+            getProduct.Height = pImg.Height;
+            getProduct.Stock = pImg.Stock;
+            getProduct.Statu = pImg.Statu;
+            pm.Update(getProduct);
             return RedirectToAction("Index");
         }
         public IActionResult Delete(int id)

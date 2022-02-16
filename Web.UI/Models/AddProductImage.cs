@@ -5,6 +5,7 @@ namespace Web.UI.Models
 {
     public class AddProductImage
     {
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public IFormFile ProductImage { get; set; }
         public int Width { get; set; }
