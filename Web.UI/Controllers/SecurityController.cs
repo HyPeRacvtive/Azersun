@@ -15,6 +15,7 @@ namespace Web.UI.Controllers
     [AllowAnonymous]
     public class SecurityController : Controller
     {
+        DataContext context = new DataContext();
         public IActionResult Login() { return View(); }
         [HttpPost]
         public async Task<IActionResult> Login(Admin a)
@@ -27,7 +28,10 @@ namespace Web.UI.Controllers
                 {
                     new Claim(ClaimTypes.Name, a.UserName)
                 };
-                var userIdentity = new ClaimsIdentity(claims,"a");
+                HttpContext.Session.SetInt32("Id", dataValue.Id);
+                HttpContext.Session.SetString("NameSurname", dataValue.NameSurname);
+                HttpContext.Session.SetString("Image", dataValue.Image);
+                var userIdentity = new ClaimsIdentity(claims, "a");
                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(principal);
                 return RedirectToAction("Index", "Admin");
@@ -36,21 +40,11 @@ namespace Web.UI.Controllers
             {
                 return View();
             }
-
-
-
-            //
-            //
-            //if (dataValue != null)
-            //{
-            //    HttpContext.Session.SetString("UserName", a.UserName);
-            //    return RedirectToAction("Index", "Admin");
-            //}
-            //else
-            //{
-            //    return View();
-            //}
-
+        }
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
         }
 
     }

@@ -10,6 +10,7 @@ using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
+    [AdminFilter]
     public class SliderController : Controller
     {
         SliderManager sm = new SliderManager(new EFSliderRepository());

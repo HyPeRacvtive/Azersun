@@ -4,10 +4,11 @@ using DataAccess.Concrete.EFCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
-    //[AllowAnonymous]
+    [AdminFilter]
     public class AdminController : Controller
     {
         
@@ -21,7 +22,6 @@ namespace Web.UI.Controllers
             ViewBag.MessageCount = context.Messages.Count().ToString();
             return View();
         }
-
         public IActionResult Profile(int id)
         {
             var values = am.GetById(id);

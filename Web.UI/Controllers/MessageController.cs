@@ -4,9 +4,11 @@ using DataAccess.Concrete.EFCore;
 using Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
+    [AdminFilter]
     public class MessageController : Controller
     {
         MessageManager mm = new MessageManager(new EFMessageRepository());

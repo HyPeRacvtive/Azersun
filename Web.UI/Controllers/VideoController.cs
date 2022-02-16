@@ -9,6 +9,7 @@ using Web.UI.Models;
 
 namespace Web.UI.Controllers
 {
+    [AdminFilter]
     public class VideoController : Controller
     {
         VideosManager vm = new VideosManager(new EFVideoRepository());

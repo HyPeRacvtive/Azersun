@@ -15,6 +15,7 @@ namespace Web.UI
         {
             services.AddControllersWithViews();
             services.AddSession();
+            services.AddDistributedMemoryCache();
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()

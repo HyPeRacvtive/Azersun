@@ -9,6 +9,7 @@ using X.PagedList;
 
 namespace Web.UI.Controllers
 {
+    [AdminFilter]
     public class ProductController : Controller
     {
 
@@ -53,6 +54,7 @@ namespace Web.UI.Controllers
         [HttpPost]
         public IActionResult Edit(AddProductImage pImg)
         {
+           
             Product p = new Product();
             if (pImg.ProductImage != null)
             {
