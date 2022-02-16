@@ -14,6 +14,7 @@ namespace Web.UI.ViewComponents.Message
             DataContext context = new DataContext();
 
             ViewBag.MessageCount = context.Messages.Count().ToString();
+            ViewBag.MessageUnReadCount = context.Messages.Where(x => x.IsRead == false).Count();
             return View();
         }
     }

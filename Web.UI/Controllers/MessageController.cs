@@ -3,6 +3,7 @@ using DataAccess.Concrete;
 using DataAccess.Concrete.EFCore;
 using Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Web.UI.Controllers
 {
@@ -11,10 +12,9 @@ namespace Web.UI.Controllers
         MessageManager mm = new MessageManager(new EFMessageRepository());
         public IActionResult Index()
         {
-            var values = mm.GetList();
+            var values = mm.GetList().OrderByDescending(x => x.Id);
             return View(values);
         }
-
         public IActionResult Detail(int id)
         {
             DataContext context = new DataContext();

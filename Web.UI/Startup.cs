@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
 namespace Web.UI
 {
@@ -31,7 +30,6 @@ namespace Web.UI
                     x.LoginPath = "/Security/Login";
                 }
             );
-
             //services.ConfigureApplicationCookie(options =>
             //{
             //    options.Cookie.HttpOnly = true;
@@ -43,7 +41,6 @@ namespace Web.UI
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
             app.UseSession();
             app.UseStatusCodePagesWithReExecute("/ErrorPage/Error", "?code{0}");
             app.UseStaticFiles();
@@ -56,7 +53,6 @@ namespace Web.UI
             app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
-           
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{Id?}"

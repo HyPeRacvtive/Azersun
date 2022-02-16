@@ -41,7 +41,7 @@
                                     <td>@mes.FirstName @mes.LastName</td>
                                     <td>@mes.Mail</td>
                                     <td>@mes.Subject</td>
-                                    <td>@mes.Message.Substring(0,mes.Message.Substring(0,20).LastIndexOf(" "))...</td>
+                                    <td>@mes.Message.Substring(0,mes.Message.Substring(0,20).LastIndexOf(""))...</td>
                                     @if (mes.IsRead)
                                     {
                                         <td> <span class="label label-success font-weight-100">Okundu</span> </td>
