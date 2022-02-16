@@ -38,8 +38,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a class=" waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-settings"></i><span class="hide-menu">Ayarlar</span></a>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-settings"></i><span class="hide-menu">Ayarlar</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="/Admin/Settings/1">Genel Ayarlar</a></li>
+                        <li><a href="/Admin/About/1">Hakkımızda</a></li>
 
+                    </ul>
                 </li>
                 <li>
                     <a class=" waves-effect waves-dark" href="/Message/Index" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Mesajlar <span class="badge rounded-pill bg-primary text-white ms-auto">@ViewBag.MessageUnReadCount / @ViewBag.MessageCount </span></span></a>

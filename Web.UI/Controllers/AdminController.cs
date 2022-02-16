@@ -10,9 +10,10 @@ namespace Web.UI.Controllers
 {
     [AdminFilter]
     public class AdminController : Controller
-    {
-        
+    {        
         AdminManager am = new AdminManager(new EFAdminRepository());
+        SettingManager sm = new SettingManager(new EFSettingRepository());
+        AboutManager abm = new AboutManager(new EFAboutRepository());
         DataContext context = new DataContext();
         public IActionResult Index()
         {
@@ -32,12 +33,21 @@ namespace Web.UI.Controllers
         {
             return View();
         }
+        public IActionResult Setting(int id)
+        {
+            var values = sm.GetById(id);
+            return View(values);           
+        }
+        public IActionResult About(int id)
+        {
+            var values = abm.GetById(id);
+            return View(values);
+        }
 
         /*Partial Views*/
 
         public PartialViewResult _LeftSideBar()
         {
-
             return PartialView();
         }
     }
